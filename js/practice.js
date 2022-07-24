@@ -81,6 +81,33 @@
 // console.log(elements);
 
 
+const refs = {
+  output: document.querySelector('.js-output'),
+  clearBtn: document.querySelector('.js-clear'),
+}
+
+window.addEventListener('keypress', onKeyDown);
+refs.clearBtn.addEventListener('click', onClearOutput);
+
+function onKeyDown(event) {
+  refs.output.textContent += event.key
+}
+
+function onClearOutput() {
+  refs.output.textContent = '';
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

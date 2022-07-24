@@ -1,15 +1,23 @@
+const decrement = document.querySelector('[data-action="decrement"]');
+const increment = document.querySelector('[data-action="increment"]');
+const counter = document.querySelector('.value');
+const clearCounter = document.querySelector('.clear');
 
-const actions = document.querySelectorAll('.counter button');
-const plusBtn = actions[1];
+let counterValue = Number(counter.textContent);
 
+const incrementAction = () => {
+  counterValue += 1;
+  counter.textContent = counterValue;
+}
+const decrementAction = () => {
+  counterValue -= 1;
+  counter.textContent = counterValue;
+}
 
-const handleClick = event => {
-  console.log(event);
-};
-
-plusBtn.addEventListener("click", handleClick);
-
-
-
-
+increment.addEventListener('click', incrementAction);
+decrement.addEventListener('click', decrementAction);
+clearCounter.addEventListener('click', () => {
+  counterValue = 0;
+  counter.textContent = counterValue;
+})
 

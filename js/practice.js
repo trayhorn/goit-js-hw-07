@@ -80,22 +80,15 @@
 
 // console.log(elements);
 
-
-const refs = {
-  output: document.querySelector('.js-output'),
-  clearBtn: document.querySelector('.js-clear'),
+const setBg = () => {
+  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+  document.body.style.backgroundColor = "#" + randomColor;
+  color.innerHTML = "#" + randomColor;
 }
 
-window.addEventListener('keypress', onKeyDown);
-refs.clearBtn.addEventListener('click', onClearOutput);
+genNew.addEventListener("click", setBg);
+setBg();
 
-function onKeyDown(event) {
-  refs.output.textContent += event.key
-}
-
-function onClearOutput() {
-  refs.output.textContent = '';
-}
 
 
 

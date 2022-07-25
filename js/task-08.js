@@ -4,25 +4,55 @@ const destroyBtn = document.querySelector('[data-action="destroy"]');
 const boxes = document.querySelector('#boxes');
 const input = document.querySelector('#controls > input');
 
-renderBtn.addEventListener('click', createBoxes);
-// destroyBtn.addEventListener('click', destroyBoxes);
-// input.addEventListener('blur', showNumber);
+const width = '30px';
+const height = '30px';
 
-function createBoxes() {
-  for (let i = 0; i < input.value; i += 1) {
-    const newDiv = document.createElement('div');
-    newDiv.textContent = '123456';
-    boxes.appendChild(newDiv);
-  };
+const destroyBoxes = function () {
+  const divClear = document.querySelectorAll('#boxes div');
+  for (let i = 0; i < divClear.length; i += 1) {
+    divClear[i].remove();
+  }
 }
 
-// function showNumber() {
-//   for (let i = 0; i < input.value; i += 1) {
-//     const newDiv = document.createElement('div');
-//     newDiv.textContent = '123456';
-//     boxes.appendChild(newDiv);
-//   };
-// }
+renderBtn.addEventListener('click', showInputValues)
+destroyBtn.addEventListener('click', destroyBoxes);
+
+function showInputValues() {
+  createBoxes(input.value);
+}
+
+const createBoxes = function (amount) {
+  for (let i = 0; i < amount; i += 1) {
+    const divAdd = document.createElement('div');
+    divAdd.style.width = widths[i];
+    divAdd.style.height = heights[i];
+    divAdd.style.backgroundColor = getRandomColor();
+    boxes.appendChild(divAdd);
+  }
+}
+
+const getRandomColor = function () {
+  const r = () => Math.random() * (255 - 1) + 1;
+  return `rgb(${r()}, ${r()}, ${r()})`;
+}
+
+
+const widths = ['30px', '40px', '50px', '60px', '70px', '80px', '90px', '100px'];
+const heights = ['30px', '40px', '50px', '60px', '70px', '80px', '90px', '100px'];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

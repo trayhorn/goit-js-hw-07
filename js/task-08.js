@@ -24,6 +24,7 @@ function showInputValues() {
 const createBoxes = function (amount) {
   for (let i = 0; i < amount; i += 1) {
     const divAdd = document.createElement('div');
+    divAdd.classList.add('design');
     divAdd.style.width = widths[i];
     divAdd.style.height = heights[i];
     divAdd.style.backgroundColor = getRandomColor();

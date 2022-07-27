@@ -14,19 +14,11 @@ const images = [
 ];
 
 
+const gallery = document.querySelector('.gallery');
+console.log(gallery);
 
-const navEl = document.querySelector('.gallery');
+const markup = images.map((image) =>
+  `<li><img width="400px" src="${image.url}" alt="${image.alt}"></li>`).join('');
+console.log(markup);
 
-for (let i = 0; i < images.length; i += 1) {
-  const option = images[i];
-  const itemEl = document.createElement('li');
-
-  const imageEl = document.createElement('img');
-  imageEl.src = option.url;
-  imageEl.alt = option.alt;
-  imageEl.width = 400;
-  imageEl.height = 240;
-
-  itemEl.appendChild(imageEl);
-  navEl.appendChild(itemEl);
-}
+gallery.insertAdjacentHTML('beforeend', markup);

@@ -4,9 +4,6 @@ const destroyBtn = document.querySelector('[data-action="destroy"]');
 const boxes = document.querySelector('#boxes');
 const input = document.querySelector('#controls > input');
 
-const width = '30px';
-const height = '30px';
-
 const destroyBoxes = function () {
   const divClear = document.querySelectorAll('#boxes div');
   for (let i = 0; i < divClear.length; i += 1) {

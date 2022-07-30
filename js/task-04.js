@@ -13,11 +13,14 @@ const decrementAction = () => {
   counterValue -= 1;
   counter.textContent = counterValue;
 }
+const clearCounterAction = () => {
+  counterValue = 0;
+  counter.textContent = counterValue;
+}
 
 increment.addEventListener('click', incrementAction);
 decrement.addEventListener('click', decrementAction);
-clearCounter.addEventListener('click', () => {
-  counterValue = 0;
-  counter.textContent = counterValue;
-})
+clearCounter.addEventListener('click', clearCounterAction)
+
+
 

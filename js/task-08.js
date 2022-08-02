@@ -12,6 +12,7 @@ function destroyBoxes () {
   for (let i = 0; i < divClear.length; i += 1) {
     divClear[i].remove();
   }
+  input.value = 0;
 }
 
 function showInputValues() {

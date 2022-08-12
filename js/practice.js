@@ -10,6 +10,15 @@ setBg();
 
 
 
+function alphanumeric(string){
+  console.log(string);
+}
+
+console.log(alphanumeric("Mazinkaiser"));
+
+
+
+
 
 
 
